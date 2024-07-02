@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F6C37A62C32AEC700CD3EFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C37A52C32AEC700CD3EFD /* GoogleService-Info.plist */; };
+		9F6C37AA2C32B11C00CD3EFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C37A92C32B11900CD3EFD /* AppDelegate.swift */; };
 		9F6F9F242C2A76B300F43307 /* gongjipsaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F232C2A76B300F43307 /* gongjipsaApp.swift */; };
 		9F6F9F262C2A76B300F43307 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F252C2A76B300F43307 /* ContentView.swift */; };
 		9F6F9F282C2A76B500F43307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6F9F272C2A76B500F43307 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F6C37A52C32AEC700CD3EFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9F6C37A92C32B11900CD3EFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F6F9F202C2A76B300F43307 /* gongjipsa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gongjipsa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6F9F232C2A76B300F43307 /* gongjipsaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gongjipsaApp.swift; sourceTree = "<group>"; };
 		9F6F9F252C2A76B300F43307 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F6C37A42C32AEB500CD3EFD /* FirebaseConfig */ = {
+			isa = PBXGroup;
+			children = (
+				9F6C37A52C32AEC700CD3EFD /* GoogleService-Info.plist */,
+			);
+			path = FirebaseConfig;
+			sourceTree = "<group>";
+		};
+		9F6C37A82C32B11200CD3EFD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9F6C37A92C32B11900CD3EFD /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		9F6F9F172C2A76B300F43307 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +116,8 @@
 		9F6F9F222C2A76B300F43307 /* gongjipsa */ = {
 			isa = PBXGroup;
 			children = (
+				9F6C37A82C32B11200CD3EFD /* App */,
+				9F6C37A42C32AEB500CD3EFD /* FirebaseConfig */,
 				9F6F9F232C2A76B300F43307 /* gongjipsaApp.swift */,
 				9F6F9F4D2C2A78AC00F43307 /* WebView.swift */,
 				9F6F9F252C2A76B300F43307 /* ContentView.swift */,
@@ -218,6 +240,9 @@
 				Base,
 			);
 			mainGroup = 9F6F9F172C2A76B300F43307;
+			packageReferences = (
+				9F6C37A72C32B06900CD3EFD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 9F6F9F212C2A76B300F43307 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F6F9F2B2C2A76B500F43307 /* Preview Assets.xcassets in Resources */,
+				9F6C37A62C32AEC700CD3EFD /* GoogleService-Info.plist in Resources */,
 				9F6F9F282C2A76B500F43307 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6C37AA2C32B11C00CD3EFD /* AppDelegate.swift in Sources */,
 				9F6F9F4E2C2A78AC00F43307 /* WebView.swift in Sources */,
 				9F6F9F262C2A76B300F43307 /* ContentView.swift in Sources */,
 				9F6F9F242C2A76B300F43307 /* gongjipsaApp.swift in Sources */,
@@ -426,7 +453,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"gongjipsa/Preview Content\"";
-				DEVELOPMENT_TEAM = P72UR4K32D;
+				DEVELOPMENT_TEAM = 9FWA649AZW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -455,7 +482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"gongjipsa/Preview Content\"";
-				DEVELOPMENT_TEAM = P72UR4K32D;
+				DEVELOPMENT_TEAM = 9FWA649AZW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -592,6 +619,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9F6C37A72C32B06900CD3EFD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 9F6F9F182C2A76B300F43307 /* Project object */;
 }
