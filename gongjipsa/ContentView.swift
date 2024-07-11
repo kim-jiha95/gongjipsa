@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var errorMessage: String?
-    
+
     var body: some View {
         NavigationView {
             ZStack {
-                WebView(url: URL(string: "https://gongjipsa.com")!, errorMessage: $errorMessage)
+                WebView(url: URL(string: "https://gongjipsa.com/")!,
+                        errorMessage: $errorMessage)
                     .edgesIgnoringSafeArea(.all)
                 
                 if let errorMessage = errorMessage {
