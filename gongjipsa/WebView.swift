@@ -8,9 +8,15 @@
 import SwiftUI
 import WebKit
 
+class WebViewModel: ObservableObject {
+    @Published var showNativeScreen = false
+    @Published var isSignInURL = false
+}
+
 struct WebView: UIViewRepresentable {
     let url: URL
     @Binding var errorMessage: String?
+    @ObservedObject var viewModel: WebViewModel
 
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
@@ -42,12 +48,8 @@ struct WebView: UIViewRepresentable {
         }
 
         func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-            if let url = navigationAction.request.url, url.host != parent.url.host {
-                UIApplication.shared.open(url)
-                decisionHandler(.cancel)
-                return
-            }
             decisionHandler(.allow)
         }
     }
 }
+
