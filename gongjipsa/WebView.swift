@@ -21,6 +21,9 @@ struct WebView: UIViewRepresentable {
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
         webView.navigationDelegate = context.coordinator
+        webView.allowsBackForwardNavigationGestures = true
+        webView.allowsLinkPreview = true
+
         let request = URLRequest(url: url)
         webView.load(request)
         return webView
@@ -48,7 +51,22 @@ struct WebView: UIViewRepresentable {
         }
 
         func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-            decisionHandler(.allow)
+            guard let url = navigationAction.request.url else {
+                decisionHandler(.cancel)
+                return
+            }
+            if isExternalURL(url) || url.scheme == "webcal"  {
+                UIApplication.shared.open(url)
+                decisionHandler(.cancel)
+            } else {
+                decisionHandler(.allow)
+            }
+        }
+
+        private func isExternalURL(_ url: URL) -> Bool {
+            let externalDomains = ["calendar.google.com", "pf.kakao.com"]
+
+            return externalDomains.contains(url.host ?? "")
         }
     }
 }
