@@ -55,7 +55,7 @@ struct AppView: View {
             
             if let errorMessage = errorMessage {
                 VStack {
-                    Text("Error: \(errorMessage)")
+                    Text("Error1: \(errorMessage)")
                         .foregroundColor(.red)
                         .padding()
                         .background(Color.white)
@@ -85,7 +85,7 @@ struct SignInView: View {
             
             if let errorMessage = errorMessage {
                 VStack {
-                    Text("Error: \(errorMessage)")
+                    Text("Error2: \(errorMessage)")
                         .foregroundColor(.red)
                         .padding()
                         .background(Color.white)
