@@ -55,7 +55,7 @@ struct WebView: UIViewRepresentable {
                 decisionHandler(.cancel)
                 return
             }
-            if isExternalURL(url) || url.scheme == "webcal"  {
+            if isExternalURL(url) || url.scheme == "webcal" || url.absoluteString == "https://gongjipsa.com/contact" {
                 UIApplication.shared.open(url)
                 decisionHandler(.cancel)
             } else {
