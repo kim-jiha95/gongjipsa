@@ -7,39 +7,51 @@
 
 
 import SwiftUI
+import SafariServices
 
 struct ContentView: View {
     @State private var errorMessage: String?
     @ObservedObject var viewModel = WebViewModel()
-
+    
     var body: some View {
-        NavigationView {
-            ZStack {
-                WebView(url: URL(string: "https://gongjipsa.com/")!,
-                        errorMessage: $errorMessage,
-                        viewModel: viewModel)
-                    .edgesIgnoringSafeArea(.all)
-
-                if let errorMessage = errorMessage {
-                    VStack {
-                        Text("Error: \(errorMessage)")
-                            .foregroundColor(.red)
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(10)
-                            .shadow(radius: 10)
-                        Spacer()
-                    }
-                    .padding()
-                }
-
-                NavigationLink(destination: AppView(), isActive: $viewModel.isSignInURL) {
-                    EmptyView()
-                }
+        ZStack {
+            WebView(url: URL(string: "https://gongjipsa.com/")!,
+                    errorMessage: $errorMessage,
+                    viewModel: viewModel)
+            .sheet(isPresented: $viewModel.showSafariScreen) {
+                SafariView(url: URL(string: "https://gongjipsa.com/contact")!)
             }
-            .navigationBarTitle("", displayMode: .inline)
+            .edgesIgnoringSafeArea(.all)
+            
+            if let errorMessage = errorMessage {
+                VStack {
+                    Text("Error: \(errorMessage)")
+                        .foregroundColor(.red)
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 10)
+                    Spacer()
+                }
+                .padding()
+            }
+            
+            NavigationLink(destination: AppView(), isActive: $viewModel.isSignInURL) {
+                EmptyView()
+            }
         }
+        .navigationBarTitle("", displayMode: .inline)
     }
+}
+
+struct SafariView: UIViewControllerRepresentable {
+    let url: URL
+    
+    func makeUIViewController(context: Context) -> SFSafariViewController {
+        return SFSafariViewController(url: url)
+    }
+    
+    func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {}
 }
 
 struct AppView: View {
