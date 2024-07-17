@@ -14,35 +14,33 @@ struct ContentView: View {
     @ObservedObject var viewModel = WebViewModel()
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                WebView(url: URL(string: "https://gongjipsa.com/")!,
-                        errorMessage: $errorMessage,
-                        viewModel: viewModel)
-                .sheet(isPresented: $viewModel.showSafariScreen) {
-                    SafariView(url: URL(string: "https://gongjipsa.com/contact")!)
-                }
-                .edgesIgnoringSafeArea(.all)
-                
-                if let errorMessage = errorMessage {
-                    VStack {
-                        Text("Error: \(errorMessage)")
-                            .foregroundColor(.red)
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(10)
-                            .shadow(radius: 10)
-                        Spacer()
-                    }
-                    .padding()
-                }
-                
-                NavigationLink(destination: AppView(), isActive: $viewModel.isSignInURL) {
-                    EmptyView()
-                }
+        ZStack {
+            WebView(url: URL(string: "https://gongjipsa.com/")!,
+                    errorMessage: $errorMessage,
+                    viewModel: viewModel)
+            .sheet(isPresented: $viewModel.showSafariScreen) {
+                SafariView(url: URL(string: "https://gongjipsa.com/contact")!)
             }
-            .navigationBarTitle("", displayMode: .inline)
+            .edgesIgnoringSafeArea(.all)
+            
+            if let errorMessage = errorMessage {
+                VStack {
+                    Text("Error: \(errorMessage)")
+                        .foregroundColor(.red)
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 10)
+                    Spacer()
+                }
+                .padding()
+            }
+            
+            NavigationLink(destination: AppView(), isActive: $viewModel.isSignInURL) {
+                EmptyView()
+            }
         }
+        .navigationBarTitle("", displayMode: .inline)
     }
 }
 

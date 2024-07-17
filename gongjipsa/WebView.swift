@@ -14,13 +14,19 @@ class WebViewModel: ObservableObject {
     @Published var isSignInURL = false
 }
 
+class FullScreenWKWebView: WKWebView {
+    override var safeAreaInsets: UIEdgeInsets {
+        return UIEdgeInsets(top: 55, left: 0, bottom: 0, right: 0)
+    }
+}
+
 struct WebView: UIViewRepresentable {
     let url: URL
     @Binding var errorMessage: String?
     @ObservedObject var viewModel: WebViewModel
 
     func makeUIView(context: Context) -> WKWebView {
-        let webView = WKWebView()
+        let webView = FullScreenWKWebView()
         webView.navigationDelegate = context.coordinator
         webView.allowsBackForwardNavigationGestures = true
         webView.allowsLinkPreview = true
