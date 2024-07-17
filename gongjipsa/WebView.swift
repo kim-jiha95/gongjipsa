@@ -10,6 +10,7 @@ import WebKit
 
 class WebViewModel: ObservableObject {
     @Published var showNativeScreen = false
+    @Published var showSafariScreen = false
     @Published var isSignInURL = false
 }
 
@@ -55,10 +56,14 @@ struct WebView: UIViewRepresentable {
                 decisionHandler(.cancel)
                 return
             }
-            if isExternalURL(url) || url.scheme == "webcal" || url.absoluteString == "https://gongjipsa.com/contact" {
+            if isExternalURL(url) || url.scheme == "webcal" {
                 UIApplication.shared.open(url)
                 decisionHandler(.cancel)
-            } else {
+            } else if url.absoluteString == "https://gongjipsa.com/contact" {
+                parent.viewModel.showSafariScreen = true
+                decisionHandler(.cancel)
+            }
+            else {
                 decisionHandler(.allow)
             }
         }

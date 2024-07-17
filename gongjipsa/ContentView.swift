@@ -7,19 +7,23 @@
 
 
 import SwiftUI
+import SafariServices
 
 struct ContentView: View {
     @State private var errorMessage: String?
     @ObservedObject var viewModel = WebViewModel()
-
+    
     var body: some View {
         NavigationView {
             ZStack {
                 WebView(url: URL(string: "https://gongjipsa.com/")!,
                         errorMessage: $errorMessage,
                         viewModel: viewModel)
-                    .edgesIgnoringSafeArea(.all)
-
+                .sheet(isPresented: $viewModel.showSafariScreen) {
+                    SafariView(url: URL(string: "https://gongjipsa.com/contact")!)
+                }
+                .edgesIgnoringSafeArea(.all)
+                
                 if let errorMessage = errorMessage {
                     VStack {
                         Text("Error: \(errorMessage)")
@@ -32,7 +36,7 @@ struct ContentView: View {
                     }
                     .padding()
                 }
-
+                
                 NavigationLink(destination: AppView(), isActive: $viewModel.isSignInURL) {
                     EmptyView()
                 }
@@ -40,6 +44,16 @@ struct ContentView: View {
             .navigationBarTitle("", displayMode: .inline)
         }
     }
+}
+
+struct SafariView: UIViewControllerRepresentable {
+    let url: URL
+    
+    func makeUIViewController(context: Context) -> SFSafariViewController {
+        return SFSafariViewController(url: url)
+    }
+    
+    func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {}
 }
 
 struct AppView: View {
