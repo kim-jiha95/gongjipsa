@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F6F9F242C2A76B300F43307 /* gongjipsaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F232C2A76B300F43307 /* gongjipsaApp.swift */; };
-		9F6F9F262C2A76B300F43307 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F252C2A76B300F43307 /* ContentView.swift */; };
+		9F6F9F262C2A76B300F43307 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F252C2A76B300F43307 /* HomeView.swift */; };
 		9F6F9F282C2A76B500F43307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6F9F272C2A76B500F43307 /* Assets.xcassets */; };
 		9F6F9F2B2C2A76B500F43307 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6F9F2A2C2A76B500F43307 /* Preview Assets.xcassets */; };
 		9F6F9F352C2A76B600F43307 /* gongjipsaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F342C2A76B600F43307 /* gongjipsaTests.swift */; };
 		9F6F9F3F2C2A76B600F43307 /* gongjipsaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F3E2C2A76B600F43307 /* gongjipsaUITests.swift */; };
 		9F6F9F412C2A76B600F43307 /* gongjipsaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F402C2A76B600F43307 /* gongjipsaUITestsLaunchTests.swift */; };
 		9F6F9F4E2C2A78AC00F43307 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F4D2C2A78AC00F43307 /* WebView.swift */; };
+		9FF2DF252C4A01C90047F1D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2DF242C4A01C90047F1D1 /* AppDelegate.swift */; };
+		9FF2DF272C4A01F60047F1D1 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2DF262C4A01F60047F1D1 /* AppRouter.swift */; };
+		9FF2DF2C2C4A046B0047F1D1 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2DF2B2C4A046B0047F1D1 /* WebViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,7 @@
 
 /* Begin PBXFileReference section */
 		9F6F9F202C2A76B300F43307 /* gongjipsa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gongjipsa.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F6F9F232C2A76B300F43307 /* gongjipsaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gongjipsaApp.swift; sourceTree = "<group>"; };
-		9F6F9F252C2A76B300F43307 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9F6F9F252C2A76B300F43307 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9F6F9F272C2A76B500F43307 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F6F9F2A2C2A76B500F43307 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F6F9F302C2A76B600F43307 /* gongjipsaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gongjipsaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +47,9 @@
 		9F6F9F3E2C2A76B600F43307 /* gongjipsaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gongjipsaUITests.swift; sourceTree = "<group>"; };
 		9F6F9F402C2A76B600F43307 /* gongjipsaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gongjipsaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9F6F9F4D2C2A78AC00F43307 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		9FF2DF242C4A01C90047F1D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9FF2DF262C4A01F60047F1D1 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		9FF2DF2B2C4A046B0047F1D1 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +100,8 @@
 		9F6F9F222C2A76B300F43307 /* gongjipsa */ = {
 			isa = PBXGroup;
 			children = (
-				9F6F9F232C2A76B300F43307 /* gongjipsaApp.swift */,
-				9F6F9F4D2C2A78AC00F43307 /* WebView.swift */,
-				9F6F9F252C2A76B300F43307 /* ContentView.swift */,
+				9FF2DF282C4A03B70047F1D1 /* Present */,
+				9FF2DF232C4A01BB0047F1D1 /* App */,
 				9F6F9F272C2A76B500F43307 /* Assets.xcassets */,
 				9F6F9F292C2A76B500F43307 /* Preview Content */,
 			);
@@ -128,6 +131,41 @@
 				9F6F9F402C2A76B600F43307 /* gongjipsaUITestsLaunchTests.swift */,
 			);
 			path = gongjipsaUITests;
+			sourceTree = "<group>";
+		};
+		9FF2DF232C4A01BB0047F1D1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9FF2DF242C4A01C90047F1D1 /* AppDelegate.swift */,
+				9FF2DF262C4A01F60047F1D1 /* AppRouter.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9FF2DF282C4A03B70047F1D1 /* Present */ = {
+			isa = PBXGroup;
+			children = (
+				9FF2DF2A2C4A03E40047F1D1 /* Home */,
+				9FF2DF292C4A03D00047F1D1 /* WebView */,
+			);
+			path = Present;
+			sourceTree = "<group>";
+		};
+		9FF2DF292C4A03D00047F1D1 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				9F6F9F4D2C2A78AC00F43307 /* WebView.swift */,
+				9FF2DF2B2C4A046B0047F1D1 /* WebViewModel.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		9FF2DF2A2C4A03E40047F1D1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9F6F9F252C2A76B300F43307 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF2DF252C4A01C90047F1D1 /* AppDelegate.swift in Sources */,
 				9F6F9F4E2C2A78AC00F43307 /* WebView.swift in Sources */,
-				9F6F9F262C2A76B300F43307 /* ContentView.swift in Sources */,
-				9F6F9F242C2A76B300F43307 /* gongjipsaApp.swift in Sources */,
+				9F6F9F262C2A76B300F43307 /* HomeView.swift in Sources */,
+				9FF2DF2C2C4A046B0047F1D1 /* WebViewModel.swift in Sources */,
+				9FF2DF272C4A01F60047F1D1 /* AppRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
