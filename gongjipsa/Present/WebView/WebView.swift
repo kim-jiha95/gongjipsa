@@ -7,18 +7,7 @@
 
 import SwiftUI
 import WebKit
-
-class WebViewModel: ObservableObject {
-    @Published var showNativeScreen = false
-    @Published var showSafariScreen = false
-    @Published var isSignInURL = false
-}
-
-class FullScreenWKWebView: WKWebView {
-    override var safeAreaInsets: UIEdgeInsets {
-        return UIEdgeInsets(top: 55, left: 0, bottom: 0, right: 0)
-    }
-}
+import Combine
 
 struct WebView: UIViewRepresentable {
     let url: URL
@@ -31,22 +20,32 @@ struct WebView: UIViewRepresentable {
         webView.allowsBackForwardNavigationGestures = true
         webView.allowsLinkPreview = true
 
-        let request = URLRequest(url: url)
-        webView.load(request)
+        if !viewModel.cookies.isEmpty {
+            viewModel.setCookies(for: webView, cookies: viewModel.cookies)
+                .sink { _ in
+                    webView.load(URLRequest(url: url))
+                }
+                .store(in: &viewModel.cancellables)
+        } else {
+            webView.load(URLRequest(url: url))
+        }
+
         return webView
     }
 
     func updateUIView(_ webView: WKWebView, context: Context) {}
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        Coordinator(self, viewModel: viewModel)
     }
 
     class Coordinator: NSObject, WKNavigationDelegate {
         var parent: WebView
+        var viewModel: WebViewModel
 
-        init(_ parent: WebView) {
+        init(_ parent: WebView, viewModel: WebViewModel) {
             self.parent = parent
+            self.viewModel = viewModel
         }
 
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
@@ -68,17 +67,28 @@ struct WebView: UIViewRepresentable {
             } else if url.absoluteString == "https://gongjipsa.com/contact" {
                 parent.viewModel.showSafariScreen = true
                 decisionHandler(.cancel)
-            }
-            else {
+            } else {
                 decisionHandler(.allow)
             }
         }
 
+        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            viewModel.fetchCookies(for: webView)
+                .sink { cookies in
+                    print("Cookies: \(cookies)")
+                }
+                .store(in: &viewModel.cancellables)
+        }
+
         private func isExternalURL(_ url: URL) -> Bool {
             let externalDomains = ["calendar.google.com", "pf.kakao.com"]
-
             return externalDomains.contains(url.host ?? "")
         }
     }
 }
 
+class FullScreenWKWebView: WKWebView {
+    override var safeAreaInsets: UIEdgeInsets {
+        return UIEdgeInsets(top: 55, left: 0, bottom: 0, right: 0)
+    }
+}
