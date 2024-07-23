@@ -9,7 +9,7 @@ import SwiftUI
 import WebKit
 import Combine
 
-struct WebView: UIViewRepresentable {
+struct WebViewController: UIViewRepresentable {
     let url: URL
     @Binding var errorMessage: String?
     @ObservedObject var viewModel: WebViewModel
@@ -40,10 +40,10 @@ struct WebView: UIViewRepresentable {
     }
 
     class Coordinator: NSObject, WKNavigationDelegate {
-        var parent: WebView
+        var parent: WebViewController
         var viewModel: WebViewModel
 
-        init(_ parent: WebView, viewModel: WebViewModel) {
+        init(_ parent: WebViewController, viewModel: WebViewModel) {
             self.parent = parent
             self.viewModel = viewModel
         }

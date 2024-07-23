@@ -14,7 +14,7 @@ struct gongjipsaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeViewController()
                 .environmentObject(AppRouter.shared)
         }
     }

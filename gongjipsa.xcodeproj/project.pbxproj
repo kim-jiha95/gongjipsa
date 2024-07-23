@@ -12,16 +12,17 @@
 		9F3E17DD2C4A10E500CF6729 /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 9F3E17DC2C4A10E500CF6729 /* FirebaseInAppMessagingSwift-Beta */; };
 		9F3E17DF2C4A10E500CF6729 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 9F3E17DE2C4A10E500CF6729 /* FirebaseMessaging */; };
 		9F3E17E12C4A11D700CF6729 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F3E17E02C4A11D700CF6729 /* GoogleService-Info.plist */; };
-		9F6F9F262C2A76B300F43307 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F252C2A76B300F43307 /* HomeView.swift */; };
+		9F6F9F262C2A76B300F43307 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F252C2A76B300F43307 /* HomeViewController.swift */; };
 		9F6F9F282C2A76B500F43307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6F9F272C2A76B500F43307 /* Assets.xcassets */; };
 		9F6F9F2B2C2A76B500F43307 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6F9F2A2C2A76B500F43307 /* Preview Assets.xcassets */; };
 		9F6F9F352C2A76B600F43307 /* gongjipsaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F342C2A76B600F43307 /* gongjipsaTests.swift */; };
 		9F6F9F3F2C2A76B600F43307 /* gongjipsaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F3E2C2A76B600F43307 /* gongjipsaUITests.swift */; };
 		9F6F9F412C2A76B600F43307 /* gongjipsaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F402C2A76B600F43307 /* gongjipsaUITestsLaunchTests.swift */; };
-		9F6F9F4E2C2A78AC00F43307 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F4D2C2A78AC00F43307 /* WebView.swift */; };
+		9F6F9F4E2C2A78AC00F43307 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F9F4D2C2A78AC00F43307 /* WebViewController.swift */; };
 		9FF2DF252C4A01C90047F1D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2DF242C4A01C90047F1D1 /* AppDelegate.swift */; };
 		9FF2DF272C4A01F60047F1D1 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2DF262C4A01F60047F1D1 /* AppRouter.swift */; };
 		9FF2DF2C2C4A046B0047F1D1 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2DF2B2C4A046B0047F1D1 /* WebViewModel.swift */; };
+		9FFBF1252C4F9A840098943E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBF1242C4F9A840098943E /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,7 @@
 		9F3E17D72C4A0FBB00CF6729 /* gongjipsaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gongjipsaApp.swift; sourceTree = "<group>"; };
 		9F3E17E02C4A11D700CF6729 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F6F9F202C2A76B300F43307 /* gongjipsa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gongjipsa.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F6F9F252C2A76B300F43307 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9F6F9F252C2A76B300F43307 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9F6F9F272C2A76B500F43307 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F6F9F2A2C2A76B500F43307 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F6F9F302C2A76B600F43307 /* gongjipsaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gongjipsaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,12 +54,13 @@
 		9F6F9F3A2C2A76B600F43307 /* gongjipsaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gongjipsaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6F9F3E2C2A76B600F43307 /* gongjipsaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gongjipsaUITests.swift; sourceTree = "<group>"; };
 		9F6F9F402C2A76B600F43307 /* gongjipsaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gongjipsaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9F6F9F4D2C2A78AC00F43307 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		9F6F9F4D2C2A78AC00F43307 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		9FF2DF242C4A01C90047F1D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FF2DF262C4A01F60047F1D1 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		9FF2DF2B2C4A046B0047F1D1 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		9FF2DF2E2C4A0AD00047F1D1 /* gongjipsa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gongjipsa.entitlements; sourceTree = "<group>"; };
 		9FF2DF2F2C4A0AD50047F1D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9FFBF1242C4F9A840098943E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +180,7 @@
 		9FF2DF292C4A03D00047F1D1 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
-				9F6F9F4D2C2A78AC00F43307 /* WebView.swift */,
+				9F6F9F4D2C2A78AC00F43307 /* WebViewController.swift */,
 				9FF2DF2B2C4A046B0047F1D1 /* WebViewModel.swift */,
 			);
 			path = WebView;
@@ -187,7 +189,8 @@
 		9FF2DF2A2C4A03E40047F1D1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				9F6F9F252C2A76B300F43307 /* HomeView.swift */,
+				9F6F9F252C2A76B300F43307 /* HomeViewController.swift */,
+				9FFBF1242C4F9A840098943E /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -332,9 +335,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FF2DF252C4A01C90047F1D1 /* AppDelegate.swift in Sources */,
-				9F6F9F4E2C2A78AC00F43307 /* WebView.swift in Sources */,
+				9F6F9F4E2C2A78AC00F43307 /* WebViewController.swift in Sources */,
+				9FFBF1252C4F9A840098943E /* HomeViewModel.swift in Sources */,
 				9F3E17D82C4A0FBB00CF6729 /* gongjipsaApp.swift in Sources */,
-				9F6F9F262C2A76B300F43307 /* HomeView.swift in Sources */,
+				9F6F9F262C2A76B300F43307 /* HomeViewController.swift in Sources */,
 				9FF2DF2C2C4A046B0047F1D1 /* WebViewModel.swift in Sources */,
 				9FF2DF272C4A01F60047F1D1 /* AppRouter.swift in Sources */,
 			);
