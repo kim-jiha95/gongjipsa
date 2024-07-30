@@ -12,6 +12,7 @@ import Combine
 class WebViewModel: ObservableObject {
     @Published var showNativeScreen = false
     @Published var showSafariScreen = false
+    @Published var SafariURL = ""
     @Published var isSignInURL = false
     @Published var cookies: [HTTPCookie] = []
 
