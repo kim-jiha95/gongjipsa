@@ -25,7 +25,7 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
-            WebView(url: URL(string: "https://gongjipsa.com/")!,
+            WebView(url: URL(string: "https://app.gongjipsa.com/auth/signin")!,
                     errorMessage: $errorMessage,
                     viewModel: viewModel)
             .sheet(isPresented: $viewModel.showSafariScreen) {
