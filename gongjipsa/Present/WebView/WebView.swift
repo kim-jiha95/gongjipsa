@@ -54,6 +54,11 @@ struct WebView: UIViewRepresentable {
         }
         
         func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+            let nsError = error as NSError
+            if nsError.code == NSURLErrorCancelled {
+                return
+            }
+
             print("Failed provisional navigation with error: \(error)")
             parent.errorMessage = error.localizedDescription
         }
