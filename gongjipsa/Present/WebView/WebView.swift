@@ -58,7 +58,6 @@ struct WebView: UIViewRepresentable {
             if nsError.code == NSURLErrorCancelled {
                 return
             }
-
             print("Failed provisional navigation with error: \(error)")
             parent.errorMessage = error.localizedDescription
         }
@@ -68,15 +67,16 @@ struct WebView: UIViewRepresentable {
                 decisionHandler(.cancel)
                 return
             }
-            
-            if isExternalURL(url) || url.scheme == "webcal" {
+            if isExternalURL(url) || url.scheme == "webcal" || url.absoluteString == "https://app.gongjipsa.com/reservations/all" {
                 UIApplication.shared.open(url)
                 decisionHandler(.cancel)
-            } else if isSafariURL(url) {
+            }
+            else if isSafariURL(url) {
                 parent.viewModel.showSafariScreen = true
                 parent.viewModel.SafariURL = url.absoluteString
                 decisionHandler(.cancel)
-            } else {
+            }
+            else {
                 decisionHandler(.allow)
             }
         }
