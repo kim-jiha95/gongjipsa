@@ -25,13 +25,12 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
-            WebView(url: URL(string: "https://gongjipsa.com/")!,
+            WebView(url: URL(string: "https://app.gongjipsa.com/auth/signin")!,
                     errorMessage: $errorMessage,
                     viewModel: viewModel)
             .sheet(isPresented: $viewModel.showSafariScreen) {
-                SafariView(url: URL(string: "https://gongjipsa.com/contact")!)
+                SafariView(url: URL(string: viewModel.SafariURL)!)
             }
-            .edgesIgnoringSafeArea(.all)
 
             if let errorMessage = errorMessage {
                 VStack {
@@ -47,33 +46,6 @@ struct HomeView: View {
             }
         }
         .navigationBarTitle("", displayMode: .inline)
-    }
-}
-
-struct SignInView: View {
-    @State private var errorMessage: String?
-    @ObservedObject var viewModel = WebViewModel()
-
-    var body: some View {
-        ZStack {
-            WebView(url: URL(string: "https://app.gongjipsa.com/auth/signin")!,
-                    errorMessage: $errorMessage,
-                    viewModel: viewModel)
-            .edgesIgnoringSafeArea(.all)
-
-            if let errorMessage = errorMessage {
-                VStack {
-                    Text("Error2: \(errorMessage)")
-                        .foregroundColor(.red)
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 10)
-                    Spacer()
-                }
-                .padding()
-            }
-        }
     }
 }
 
