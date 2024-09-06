@@ -18,14 +18,14 @@ struct SafariView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {}
 }
 
-struct HomeViewController: View {
+struct HomeView: View {
     @State private var errorMessage: String?
     @ObservedObject var viewModel = WebViewModel()
     @ObservedObject var router = AppRouter.shared
 
     var body: some View {
         ZStack {
-            WebViewController(url: URL(string: "https://gongjipsa.com/")!,
+            WebView(url: URL(string: "https://gongjipsa.com/")!,
                     errorMessage: $errorMessage,
                     viewModel: viewModel)
             .sheet(isPresented: $viewModel.showSafariScreen) {
@@ -56,7 +56,7 @@ struct SignInView: View {
 
     var body: some View {
         ZStack {
-            WebViewController(url: URL(string: "https://app.gongjipsa.com/auth/signin")!,
+            WebView(url: URL(string: "https://app.gongjipsa.com/auth/signin")!,
                     errorMessage: $errorMessage,
                     viewModel: viewModel)
             .edgesIgnoringSafeArea(.all)
@@ -78,5 +78,5 @@ struct SignInView: View {
 }
 
 #Preview {
-    HomeViewController()
+    HomeView()
 }
